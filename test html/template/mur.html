@@ -1,0 +1,11 @@
+
+<div  ng-controller = "wall_post as ctrl_post">
+	<div class="post-box row" ng-repeat= "post in ctrl_post.posts">
+		<div class="post-date" ><p>{{ctrl_post.get_date_formated(post.date)}}</p></div>
+		<div class="post" ><p>{{post.message}}</p></div>
+		<div class="comment-box" ng-repeat= "com in post.comments">
+			<div class="comment-date col-md-3 col-xs-3 col-lg-3 col-sm-3 "><p>{{ctrl_post.get_date_formated(com.date)}}</p><p>{{com.comment_owner}}</p></div>
+			<div class="comment col-md-9 col-xs-9 col-lg-9 col-sm-9 "><p>{{com.message}}</p></div>
+		</div>
+	</div>
+</div>

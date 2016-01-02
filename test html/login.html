@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="connexion">
+<head>
+	<title>Login</title>
+	<meta charset="utf-8" /> 
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,900' rel='stylesheet' type='text/css'>
+	<link href='css/bootstrap.min.css' rel='stylesheet' type='text/css'>	
+	<link href='css/style.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div class="vertical-center">
+		<div class="container" ng-controller = "identification as ctrl">
+			<div ng-include="ctrl.current_panel.template">
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/identification.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+    "name": "fallout",
+    "dependencies": {
+        "jquery": "latest",
+        "angular" : "latest",
+        "bootstrap": "latest"
+    }
+}

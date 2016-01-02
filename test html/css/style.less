@@ -1,0 +1,261 @@
+@primary: #00FF0A;
+
+body
+{
+	font-family: 'Roboto', sans-serif;
+	background-color: black;
+	color: @primary;
+	height: 100%;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+a{
+	color: @primary;
+
+
+	&:visited{
+		color: @primary;
+	}
+
+	&:active{
+		color: @primary;
+	}
+	&:hover{
+		color: darken(@primary, 30%);
+	}
+}
+
+.nav-bar{
+	font-size: 25px;
+	margin-top: 50px;
+	text-align: center;
+
+
+	.nav-separator{
+		border-top: 1px solid @primary;
+		border-right:  1px solid @primary;
+		border-left: 1px solid @primary;
+		width: 100%;
+		height: 10px;
+		z-index: -2;
+		position: relative;
+	}
+	
+	.nav-button{
+		z-index: 3;
+		margin: auto;
+		/*width: 140px;*/
+	}
+
+	.inframe{
+	    background-color: rgb(0, 0, 0);
+	    z-index: -1;
+	    bottom: -1px;
+	    border-left: 2px solid @primary;
+	    border-right: 2px solid @primary;
+	    border-top: 2px solid @primary;
+	    position: absolute;
+		
+	}
+
+
+	.inframe-border {
+	    content:"";
+	    background: black;
+	    position: absolute;
+	    bottom: 14px;
+	    left: 22px;
+	    height: 2px;
+	    width: 140px;
+	    z-index: -1;
+
+	}
+}
+
+.sub-menu-buttons{
+	text-transform: uppercase;
+	font-size: 20px;
+	margin-top: 5px;
+	font-weight: bold;
+	text-align: center;
+	color: #016F05;
+	
+	span{
+		margin: 0 15px;
+	}
+}
+
+.sub-menu-buttons .selected{
+	color: @primary;
+}
+
+.tpl-container{
+	margin-top: 50px;
+
+	.sn-member-container{
+		border: 2px solid @primary;
+		height: 75vh;
+		overflow: auto;
+
+		h2{
+			text-align: center;
+		}
+
+		.glyphicon{
+			text-align: center;
+			color: @primary;
+		    margin-left: 5px;
+		}
+
+		.member-online{
+			color: green;
+		}
+
+		.member-title{
+			margin-bottom: 15px;
+		}
+
+
+		.member-info{
+		
+			.online{
+				height: 15px;
+			    background-color: red;
+			    width: 15px;
+			    border-radius: 8px;
+			    background: rgba(255,38,0,1);
+			    background: -moz-linear-gradient(top, rgba(255,38,0,1) 0%, rgba(87,12,5,1) 100%);
+			    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,38,0,1)), color-stop(100%, rgba(87,12,5,1)));
+			    background: -webkit-linear-gradient(top, rgba(255,38,0,1) 0%, rgba(87,12,5,1) 100%);
+			    background: -o-linear-gradient(top, rgba(255,38,0,1) 0%, rgba(87,12,5,1) 100%);
+			    background: -ms-linear-gradient(top, rgba(255,38,0,1) 0%, rgba(87,12,5,1) 100%);
+			    background: linear-gradient(to bottom, rgba(255,38,0,1) 0%, rgb(76, 6, 0) 100%);
+			    margin-left: 30%
+			}
+
+			.not-online{
+				height: 15px;
+			    background-color: red;
+			    width: 15px;
+			    border-radius: 8px;
+			    background: rgba(255,38,0,1);
+			    background: -moz-linear-gradient(top,rgb(0, 255, 10) 0%, rgb(1, 74, 4) 100%);
+			    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,38,0,1)), color-stop(100%, rgba(87,12,5,1)));
+			    background: -webkit-linear-gradient(top,rgb(0, 255, 10) 0%, rgb(1, 74, 4) 100%);
+			    background: -o-linear-gradient(top,rgb(0, 255, 10) 0%, rgb(1, 74, 4) 100%);
+			    background: -ms-linear-gradient(top,rgb(0, 255, 10) 0%, rgb(1, 74, 4) 100%);
+			    background: linear-gradient(to bottom, rgb(0, 255, 10) 0%, rgb(1, 74, 4) 100%);
+			    margin-left: 30%
+			}
+		}
+	}
+
+	.post-box{
+		margin-bottom: 40px;
+
+		.post{
+			background-color:  @primary;
+			color: black;
+			width: 100%;
+
+			min-height: 75px;
+			padding: 8px;
+		}
+		
+		.comment-box{
+			display: flex;
+		}
+
+		.comment-date{
+
+			border: 1px solid @primary;
+			padding-top: 5px;
+		}
+
+		.comment{
+
+			border: 1px solid @primary;
+			padding-top: 5px;
+		}
+	}
+
+	.post-box.row{
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+.retractor{
+	padding: 15px;
+}
+
+.center{
+	text-align: center;
+}
+
+/* Login part*/
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+.block-container{
+	@block-width: 0.8;
+	margin: auto;
+	width: percentage(@block-width);
+	.block-header{
+		background-color: @primary;
+		color: black;
+		text-align: center;
+		.retractor();
+		height: 50px;
+
+		h3{
+			margin: 0;
+			font-weight: bold;
+		}
+	}
+
+	.block-body{
+		color: @primary;
+		border: 2px solid @primary;
+		.retractor();
+
+		input,button{
+			background-color: @primary;
+		    color: black;
+		    border: none;
+		    border-radius: 0;
+
+		}
+
+		button{
+			text-align: center;
+			font-weight: bold;
+			margin-top: 15px;
+
+			&:active{
+				background-color: darken(@primary, 30%);
+			}
+		}
+	}
+
+	.block-body + div{
+		margin-top: 10px;
+		border: none;
+		border-radius: 0;
+	}
+}
+
+
+
+
+
+
+
+
