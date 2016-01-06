@@ -5,19 +5,28 @@
   app.controller('menu_buttons', function(){
     this.button_contact = [
       {
-        name: 'list',
+        name: 'amis',
         selected: true,
         id: 1,
+        template: 'template/mur.html',
+      },
+      {
+        name: 'inviter',
+        selected: false,
+        id: 1,
+        template:"template/inviter.html"
       },
       {
         name: 'Chat',
         selected: false,
         id: 2,
+        template: 'template/mur.html',
       },
       {
         name: 'Message',
         selected: false,
         id: 3,
+        template: 'template/mur.html',
       },
     ];
     this.button_mur = {
@@ -31,19 +40,23 @@
         name: 'test',
         selected: true,
         id: 1,
+        template: 'template/mur.html',
       },
       {
         name: 'deconnexion',
         selected: false,
         id: 2,
+        template: 'template/mur.html',
       },
       {
         name: 'MDP perdu',
         selected: false,
         id: 3,
+        template: 'template/mur.html',
       },
     ];
     this.current_menu_button = this.button_contact;
+    this.template = 'template/mur.html';
     this.set_current_menu_button = function(button_name){
         this.current_menu_button = this[button_name];
         console.log("current menu",button_name);
@@ -54,10 +67,12 @@
         });
          this.current_menu_button[index].selected = true;
     };
-    this.template = {
-      name: 'mur.html',
-      url: 'template/mur.html'
+
+    this.set_current_template = function(template){
+      this.template = template;
+       console.log("template",template);
     };
+    
   });
 
   app.controller('wall_post', function(){
@@ -103,22 +118,22 @@
       {
         name: 'Jabba the Hutt',
         online: true,
-        friend: false,
+        img: "http://www.lightninggamingnews.com/wp-content/uploads/2015/10/Your-Agility-in-Fallout-4-will-make-you-go-ninja-on-enemies-.jpg",
       },
       {
         name: 'Luke Skywalker',
         online: true,
-        friend: true,
+        img: "http://images.techtimes.com/data/images/full/137177/fallout-4-perception.jpg?w=600",
       },
       {
         name: 'Dark Vador',
         online: false,
-        friend: true,
+        img: "http://cdn.pcgamesn.com/sites/default/files/Fallout%204%20perception%20trailer.jpg",
       },
       {
         name: 'Chewbaka',
         online: true,
-        friend: false,
+        img: "http://aggrogamer.com/assets/1444234374-a3f799e812ee21691bc5ecf1e10f2154.jpg",
       },
 
     ];

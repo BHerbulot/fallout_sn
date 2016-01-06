@@ -1,6 +1,6 @@
 'use strict';
 (function(){
-  var app = angular.module('connexion',[]);
+  var app = angular.module('connexion',["ngAnimate"]);
 
   app.controller('identification', function(){
     this.connexion = 
@@ -20,13 +20,19 @@
         template: 'template/inscription.html'
     };
     
-    this.current_panel = this.connexion;
+    this.current_panel = this.inscription;
     this.set_current_panel = function(button_name){
       this.current_panel = this[button_name];
     };
 /*    this.load_template = function(template){
 
     };*/
+
+    this.submit_form = function(is_valid){
+      if(is_valid){
+        alert('cool');
+      }
+    };
   });
   
 })();

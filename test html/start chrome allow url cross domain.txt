@@ -2,4 +2,6 @@ cd C:\Program Files (x86)\Google\Chrome\Application
 
 chrome.exe --disable-web-security
 
-mount -t vboxsf Dropbox /home/pal/Bureau/partage
+mount -t vboxsf falloutSN /home/pal/Bureau/falloutDoc
+
+C:\Users\Paladin\falloutSN\fallout_social_network\test html\css

@@ -33,10 +33,10 @@
 				<div class="nav-separator"></div>
 			</div>
 			<div class="sub-menu-buttons" >
-				<span ng-repeat= "sub_title in ctrl.current_menu_button track by $index" ng-class="{selected: sub_title.selected}" ng-click="ctrl.set_current_sub_menu_button($index)">{{sub_title.name}}</span>
+				<span ng-repeat= "sub_title in ctrl.current_menu_button track by $index" ng-class="{selected: sub_title.selected}" ng-click="ctrl.set_current_sub_menu_button($index);ctrl.set_current_template(sub_title.template)">{{sub_title.name}}</span>
 			</div>
 			<div class="row tpl-container">
-				<div class="col-md-4 col-xs-4 col-lg-4 col-sm-4 sn-member-container">
+<!-- 				<div class="col-md-4 col-xs-4 col-lg-4 col-sm-4 sn-member-container">
 					<div ng-controller="sn_member as ctrl_member">
 						<h2>Membres</h2>
 						<div class="row member-title">
@@ -55,16 +55,15 @@
 								<span ng-if="!member.friend" class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
 							</div>
 						</div>
-						<!-- <span ng-repeat= "member in ctrl_member.members" ng-class="{member-online: member.online}"  class="glyphicon glyphicon-record" aria-hidden="true"></span> -->
 					</div>
-				</div>
-				<div class="col-md-8 col-xs-8 col-lg-8 col-sm-8 articles-cont" ng-include="ctrl.template.url" >
+				</div> -->
+				<div class="col-md-12 col-xs-12 col-lg-12 col-sm-12 articles-cont" ng-include="ctrl.template" >
 					
 				</div>
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/angular.min.js"></script>
 	<script type="text/javascript" src="js/dateformatter.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
@@ -88,7 +87,7 @@
 
 
 			setTimeout(function(){
-				$('.nav-button:first').trigger('click');
+				$('.nav-button:eq(1)').trigger('click');
 			}, 50);
 		});
 

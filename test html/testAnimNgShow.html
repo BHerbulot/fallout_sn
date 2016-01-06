@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html ng-app="test">
+<head>
+	<title>Login</title>
+	<meta charset="utf-8" /> 
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,900' rel='stylesheet' type='text/css'>
+	<link href='css/bootstrap.min.css' rel='stylesheet' type='text/css'>	
+	<link href='css/style.css' rel='stylesheet' type='text/css'>
+	<style type="text/css">
+		.transitionSimple {
+		    transition: 0.5s linear all;
+		}
+
+		.transitionSimple:hover {
+		    opacity: 0;
+		}
+
+
+		.elementAnime.ng-enter,
+		.elementAnime.ng-leave {
+
+		  transition: 1s linear all;
+
+		}
+
+		.elementAnime.ng-enter,
+		.elementAnime.ng-leave.ng-leave-active {
+		  opacity: 0;
+		}
+		.elementAnime.ng-leave,
+		.elementAnime.ng-enter.ng-enter-active {
+		  opacity: 1;
+		}
+
+
+
+
+		.elementAnime2.ng-hide-add,
+		.elementAnime2.ng-hide-remove {
+
+		  transition: 1s linear all;
+		  display:block!important;
+		}
+
+
+		.elementAnime2.ng-hide  {
+		    opacity:0;
+		}
+
+
+		@-webkit-keyframes fadeIn {
+		  0% {
+		    opacity: 0;
+		  }
+
+		  100% {
+		    opacity: 1;
+		  }
+		}
+
+		@keyframes fadeIn {
+		  0% {
+		    opacity: 0;
+		  }
+
+		  100% {
+		    opacity: 1;
+		  }
+		}
+
+		.fadeIn {
+		  -webkit-animation-name: fadeIn;
+		  animation-name: fadeIn;
+		}
+
+		@-webkit-keyframes fadeOut {
+		  0% {
+		    opacity: 1;
+		  }
+
+		  100% {
+		    opacity: 0;
+		  }
+		}
+
+		@keyframes fadeOut {
+		  0% {
+		    opacity: 1;
+		  }
+
+		  100% {
+		    opacity: 0;
+		  }
+		}
+
+		.fadeOut {
+		  -webkit-animation-name: fadeOut;
+		  animation-name: fadeOut;
+		}
+
+
+
+		.elementAnime3.ng-hide-add,
+		.elementAnime3.ng-hide-remove {
+
+		  display:block!important;
+		}
+
+		.elementAnime3.ng-hide-remove {
+		    -webkit-animation: 1s fadeIn;
+		}
+
+		.elementAnime3.ng-hide  {
+		    -webkit-animation: 1s fadeOut;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="vertical-center">
+		<div class="container">
+			<div class="transitionSimple">Je suis une simple transition au survol</div>
+		    <div>
+
+		        <button ng-click="animeEnCours = !animeEnCours">Anime</button>
+
+		        <h2 ng-if="animeEnCours" class="elementAnime">Le Javascript c'est formidable</h2>
+
+		        <h2 ng-show="animeEnCours" class="elementAnime2">AngularJs aussi</h2>
+
+		        <h2 ng-show="animeEnCours" class="elementAnime3">Et encore mieux avec du Css</h2>
+
+		    </div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/angular-animate.js"></script>
+	<script type="text/javascript" src="js/identification.js"></script>
+	<script type="text/javascript">
+		'use strict';
+		(function(){
+  			var app = angular.module('test',["ngAnimate"]);
+  		})();
+	</script>
+</body>
+</html>
