@@ -1,0 +1,70 @@
+<div class="block-container">
+  <div class="block-header">
+    <h3>Inscription</h3>
+  </div>
+  <div class="block-body">
+  	<form role="form" name="form_inscription">
+      <div class="form-group row">
+<!--         <div class="col-md-offset-1 col-xs-offset-1 col-lg-offset-1 col-sm-offset-1  col-md-11  col-xs-11  col-lg-11  col-sm-11 ">
+        <div class="col-md-offset-1 col-xs-offset-1 col-lg-offset-1 col-sm-offset-1 col-md-10 col-xs-10 col-lg-10 col-sm-10">
+        <div class="col-md-1 col-xs-1 col-lg-1 col-sm-1" style="text-align: center; padding-left:0;">
+          <span ng-show="form_forgot_pwd.email.$valid" class="glyphicon glyphicon-ok-sign" aria-hidden="true" ></span>
+        </div> -->
+
+        <div class="col-md-offset-1 col-xs-offset-1 col-lg-offset-1 col-sm-offset-1  col-md-11  col-xs-11  col-lg-11  col-sm-11 ">
+          <label for="pseudo">Pseudonyme:</label><span ng-show="focus_pseudo">3 charactères minumum </span>
+        </div>
+        <div class="col-md-offset-1 col-xs-offset-1 col-lg-offset-1 col-sm-offset-1 col-md-10 col-xs-10 col-lg-10 col-sm-10">
+          <input type="text" class="form-control" id="pseudo" name="pseudo" ng-minlength="3" ng-model="user.pseudo" ng-focus="focus_pseudo = true"  ng-blur="focus_pseudo = false" required>
+        </div>
+        <div class="col-md-1 col-xs-1 col-lg-1 col-sm-1" style="text-align: center; padding-left:0;">
+          <span ng-show="form_inscription.pseudo.$valid" class="glyphicon glyphicon-ok-sign" aria-hidden="true" ></span>
+        </div>
+      </div>
+
+  		<div class="form-group row">
+        <div class="col-md-offset-1 col-xs-offset-1 col-lg-offset-1 col-sm-offset-1  col-md-11  col-xs-11  col-lg-11  col-sm-11 ">
+  		  	<label for="email">Addresse email:</label><span ng-show="focus_mail">Entrer une adresse mail valide</span>
+        </div>
+        <div class="col-md-offset-1 col-xs-offset-1 col-lg-offset-1 col-sm-offset-1 col-md-10 col-xs-10 col-lg-10 col-sm-10">
+  		  	<input type="email" class="form-control" id="email" name="email" ng-model="user.email" required ng-focus="focus_mail = true"  ng-blur="focus_mail = false">
+        </div>
+        <div class="col-md-1 col-xs-1 col-lg-1 col-sm-1" style="text-align: center; padding-left:0;">
+          <span ng-show="form_inscription.email.$valid" class="glyphicon glyphicon-ok-sign" aria-hidden="true" ></span>
+        </div>
+  		</div>
+
+  		<div class="form-group row">
+        <div class="col-md-offset-1 col-xs-offset-1 col-lg-offset-1 col-sm-offset-1  col-md-11  col-xs-11  col-lg-11  col-sm-11 ">
+  		    <label for="pwd">Mot de passe:</label><span ng-show="focus_pwd">6 charactères minimum</span>
+        </div>
+        <div class="col-md-offset-1 col-xs-offset-1 col-lg-offset-1 col-sm-offset-1 col-md-10 col-xs-10 col-lg-10 col-sm-10">
+  		    <input type="password" class="form-control" id="pwd" name="pwd" ng-model="user.pwd" ng-minlength="6" required ng-focus="focus_pwd = true"  ng-blur="focus_pwd = false">
+        </div>
+        <div class="col-md-1 col-xs-1 col-lg-1 col-sm-1" style="text-align: center; padding-left:0;">
+          <span ng-show="form_inscription.pwd.$valid" class="glyphicon glyphicon-ok-sign" aria-hidden="true" ></span>
+        </div>
+  		</div>
+
+      <div class="form-group row">
+        <div class="col-md-offset-1 col-xs-offset-1 col-lg-offset-1 col-sm-offset-1  col-md-11  col-xs-11  col-lg-11  col-sm-11 ">
+          <label for="checked-pwd">Confirmer le mot de passe:</label><span ng-show="focus_checked_pwd">Taper éxactement le même mot de passe</span>
+        </div>
+        <div class="col-md-offset-1 col-xs-offset-1 col-lg-offset-1 col-sm-offset-1 col-md-10 col-xs-10 col-lg-10 col-sm-10">
+          <input type="password" class="form-control" id="checked-pwd" name="checked_pwd" ng-model="user.checked_pwd" ng-minlength="6" required ng-focus="focus_checked_pwd = true"  ng-blur="focus_checked_pwd = false">
+        </div>
+        <div class="col-md-1 col-xs-1 col-lg-1 col-sm-1" style="text-align: center; padding-left:0;">
+          <span ng-show="form_inscription.checked_pwd.$valid" class="glyphicon glyphicon-ok-sign" aria-hidden="true" ></span>
+        </div>
+      </div>
+
+  		<div class="center">
+  			<button class="btn btn-default">Submit</button>
+			</div>
+	</form>
+  </div>
+  <div class="row">
+  	<div class="col-md-6 col-xs-6 col-lg-6 col-sm-6 center"><a href="#" ng-click="ctrl.set_current_panel('connexion')">connexion</a></div>
+    <div class="col-md-6 col-xs-6 col-lg-6 col-sm-6 center"><a href="#" ng-click="ctrl.set_current_panel('forgotten_password')">mot de passe oublié</a></div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="row" ng-controller="chat as ctrl_chat">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 chat-container">
+		<div ng-repeat= "msg in ctrl_chat.all_message">
+			<div class="chat-box" >
+				<span>{{msg.user}}</span> <span> {{ctrl_chat.get_date_formated(msg.date)}} </span>
+				<div class="chat-msg">
+					<p>{{msg.message}} </p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="chat-input row ">
+	<form>
+		<div class="">
+			<div class="col-xs-10 col-sm-10 col-md-11 col-lg-11">
+				<input type="text" class="form-control">
+			</div>
+			<div class="col-xs-2 col-sm-2 col-md-1 col-lg-1">
+				<input type="submit" class="form-control" value="ok" >
+			</div>
+		</div>
+	</form>
+</div>
