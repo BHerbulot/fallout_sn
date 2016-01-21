@@ -96,6 +96,7 @@ a{
 
 .tpl-container{
 	margin-top: 50px;
+	//overflow: auto;
 
 	.sn-member-container{
 		border: 2px solid @primary;
@@ -407,4 +408,83 @@ form input.form-control, form button{
 }
 
 
+/**** custom modal *****/
 
+.xtra{
+	font-family: 'Roboto', sans-serif !important;
+
+	.modal-content {
+		border: 2px solid;
+	    border-radius: 0;
+
+	}
+}
+
+.xtra .modal-header{
+	background-color: @primary;
+	vertical-align: middle;
+	text-align:center;
+	color: black;
+	
+	border: none;
+
+	h4{
+		font-family: 'Roboto', sans-serif !important;
+		font-style: bold;
+	}
+
+
+}
+
+.xtra .modal-body{
+    background-color: black;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: @primary;
+	border: none;
+
+}
+
+.xtra .modal-footer{
+    vertical-align: middle;
+    padding: 0;
+    color: black;
+    background-color: black;
+    border: none;
+    display: table;
+    width: 100%;
+
+}
+
+.xtra .modal-footer .btn-default{
+	background-color: @primary;
+    vertical-align: middle;
+    color: black;
+   // width: 48%;
+   width: 50%;
+    text-transform: lowercase;
+    float: left;
+    border-radius: 0;
+    border: none;
+    border-right: 1px solid black;
+    border-left: 2px solid black;
+    //margin: 1%;
+        margin-bottom: 2px;
+}
+
+.xtra .modal-footer .btn-primary{
+	background-color: @primary;
+    vertical-align: middle;
+    color: black;
+    //width: 48%;
+    width: 50%;
+    text-transform: lowercase;
+    float: left;
+    border-radius: 0;
+    margin-left: 0;
+    border: none;
+    border-left: 1px solid black;
+    border-right: 2px solid black;
+   // margin: 1%;
+       margin-bottom: 2px;
+}

@@ -4,7 +4,7 @@ chrome.exe --disable-web-security
 
 mount -t vboxsf Dropbox /home/pal/Bureau/partage
 
-cd C:\Users\Paladin\falloutSN\fallout_social_network\test html\css
+cd C:\Users\Paladin\falloutSN\fallout_social_network\work\public\css
 
 
 mongodb
@@ -23,3 +23,8 @@ db.user.insert({
 	dinscription: new Date(), 
 	pwd: "coucou"
 });
+
+
+cd /cygdrive/c/Users/Paladin/falloutSN/fallout_social_network/work
+
+clear = printf "\033c"

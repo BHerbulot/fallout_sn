@@ -32,5 +32,14 @@ router.get('/', function(req,res){
 
 });
 
+router.get('/disconnect', function(req, res){
+  console.log('Dicsonnect');
+  req.session.destroy(function(error){
+    if(error)
+      console.log('error for destroy the seesion');
+    res.redirect('/');
+  });
+
+}); 
 
 module.exports = router;

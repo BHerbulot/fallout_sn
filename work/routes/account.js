@@ -3,6 +3,7 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 var db = require('../db');
 var session = require('express-session');
+var tools = require('../tools');
 
 //router.use(express.static('views'));
 //router.use('/login', express.static(__dirname  +'/login'));
@@ -47,6 +48,44 @@ router.post('/tryConnection', function(req, res){
     		}
     	}
 	});
+});
+
+router.post('/tryInscription', function(req, res){
+	//res.json({res: 'ok'});
+
+	var verif = tools.form_verification([
+		{
+			content: req.body.user,
+			type: 'name'
+		},
+		{
+			content: req.body.email,
+			type: 'email'
+		},
+		{
+			content: req.body.pwd,
+			type: 'pwd'
+		},
+		{
+			content: req.body.checked_pwd,
+			pwd: req.body.pwd,
+			type: 'checked_pwd'
+		}
+
+	]);
+
+	var form_ok = true;
+	verif.forEach(function(doc){
+		if(!doc.type){
+			form_ok = false;
+		}
+	});
+	if(!form_ok){
+		res.json({bad_form: verif});
+	}else{
+
+	}
+
 });
 
 

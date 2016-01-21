@@ -333,3 +333,65 @@ form button {
   background: -moz-linear-gradient(top, #f4f4f4 0%, #ededed 100%);
   background: -ms-linear-gradient(top, #f4f4f4 0%, #ededed 100%);
 }
+/**** custom modal *****/
+.xtra {
+  font-family: 'Roboto', sans-serif !important;
+}
+.xtra .modal-content {
+  border: 2px solid;
+  border-radius: 0;
+}
+.xtra .modal-header {
+  background-color: #00FF0A;
+  vertical-align: middle;
+  text-align: center;
+  color: black;
+  border: none;
+}
+.xtra .modal-header h4 {
+  font-family: 'Roboto', sans-serif !important;
+  font-style: bold;
+}
+.xtra .modal-body {
+  background-color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #00FF0A;
+  border: none;
+}
+.xtra .modal-footer {
+  vertical-align: middle;
+  padding: 0;
+  color: black;
+  background-color: black;
+  border: none;
+  display: table;
+  width: 100%;
+}
+.xtra .modal-footer .btn-default {
+  background-color: #00FF0A;
+  vertical-align: middle;
+  color: black;
+  width: 50%;
+  text-transform: lowercase;
+  float: left;
+  border-radius: 0;
+  border: none;
+  border-right: 1px solid black;
+  border-left: 2px solid black;
+  margin-bottom: 2px;
+}
+.xtra .modal-footer .btn-primary {
+  background-color: #00FF0A;
+  vertical-align: middle;
+  color: black;
+  width: 50%;
+  text-transform: lowercase;
+  float: left;
+  border-radius: 0;
+  margin-left: 0;
+  border: none;
+  border-left: 1px solid black;
+  border-right: 2px solid black;
+  margin-bottom: 2px;
+}
