@@ -1,24 +1,26 @@
+
 <div class="row" ng-controller="sn_member as ctrl_member">
+	<div after-render="ctrl_member.get_members()"></div>
 	<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3" ng-repeat= "member in ctrl_member.members">
 		<div class="member_box row">
 			<div class="row-height ">
 				<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 col-height">
-					<div class="inside">
+<!-- 					<div class="inside">
 						<img ng-src="{{member.img}}" class="img-responsive" alt="Cinque Terre">
-					</div>
+					</div> -->
 				</div>
 
 				<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 col-height center">
 					<div class=" ">
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							<span>{{member.name}}</span>
+							<span>{{member.user}}</span>
 						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<!-- 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							<div  ng-if="member.online" class="online"></div>
 							<div  ng-if="!member.online" class="not-online"></div>
-						</div>
+						</div> -->
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							<button class="btn-sn">inviter</button>
+							<button class="btn-sn" ng-click="ctrl_member.invite_member('{{member.user}}')" >inviter</button>
 						</div>
 					</div>
 				</div>

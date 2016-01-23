@@ -57,17 +57,30 @@
 						</div>
 					</div>
 				</div> -->
-				<div class="col-md-12 col-xs-12 col-lg-12 col-sm-12 articles-cont" ng-include="ctrl.template" >
+
+
+
+<!-- 				<div class="col-md-12 col-xs-12 col-lg-12 col-sm-12 articles-cont" ng-include="ctrl.template" >
 					
 				</div>
+
+ -->			
+ 				
+				<div  class="col-md-12 col-xs-12 col-lg-12 col-sm-12 articles-cont" ng-view>
+		        </div>
 			</div>
 		</div>
 	</div>
 	<a href="/disconnect" style="position: absolute; top: 0; left: 0;">Déconnexion</a>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/angular-route.js"></script>
 	<script type="text/javascript" src="js/dateformatter.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="js/TimeCircles.js"></script>
+	<script type="text/javascript" src="js/underscore-min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.alert.js"></script>
 	<script type="text/javascript">
 
 		var menu_button_frame = '<div class="inframe"></div><div class="inframe-border"></div>';

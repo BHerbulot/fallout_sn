@@ -4,6 +4,58 @@
 		"selected_items":
 		[
 			[
+				"se",
+				"self"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"mem",
+				"member"
+			],
+			[
+				"invi",
+				"inviter"
+			],
+			[
+				"col",
+				"coll"
+			],
+			[
+				"va",
+				"valu"
+			],
+			[
+				"s",
+				"services"
+			],
+			[
+				"tr",
+				"true"
+			],
+			[
+				"che",
+				"checked_pwd"
+			],
+			[
+				"ms",
+				"msg_error_form"
+			],
+			[
+				"us",
+				"new_user"
+			],
+			[
+				"mat",
+				"margin-bottom"
+			],
+			[
+				"border-r",
+				"border-right"
+			],
+			[
 				"font",
 				"font-style"
 			],
@@ -26,14 +78,6 @@
 			[
 				"t",
 				"type"
-			],
-			[
-				"che",
-				"checked_fields"
-			],
-			[
-				"tr",
-				"tryInscription"
 			],
 			[
 				"a",
@@ -88,10 +132,6 @@
 				"font-size"
 			],
 			[
-				"border-r",
-				"border-radius"
-			],
-			[
 				"fot",
 				"font-weight"
 			],
@@ -118,10 +158,6 @@
 			[
 				"in",
 				"inline-block"
-			],
-			[
-				"s",
-				"solid"
 			],
 			[
 				"min",
@@ -231,7 +267,7 @@
 			"file": "work/routes/base.js",
 			"settings":
 			{
-				"buffer_size": 1041,
+				"buffer_size": 1316,
 				"line_ending": "Windows"
 			}
 		},
@@ -239,32 +275,8 @@
 			"file": "work/routes/account.js",
 			"settings":
 			{
-				"buffer_size": 1892,
+				"buffer_size": 3121,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "work/public/js/identification.js",
-			"settings":
-			{
-				"buffer_size": 2605,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Paladin/falloutSN/bootstrap.alert/test.html",
-			"settings":
-			{
-				"buffer_size": 8091,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "work/public/js/bootstrap.alert.js",
-			"settings":
-			{
-				"buffer_size": 6937,
-				"line_ending": "Unix"
 			}
 		},
 		{
@@ -276,42 +288,50 @@
 			}
 		},
 		{
-			"file": "work/public/template/inscription.html",
-			"settings":
-			{
-				"buffer_size": 4898,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "work/public/template/connexion.html",
-			"settings":
-			{
-				"buffer_size": 2181,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "work/views/home.html",
 			"settings":
 			{
-				"buffer_size": 4626,
+				"buffer_size": 5088,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "work/public/css/style.less",
+			"file": "work/public/template/friend_list.html",
 			"settings":
 			{
-				"buffer_size": 7756,
+				"buffer_size": 944,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "work/tools.js",
+			"file": "work/public/template/mur.html",
 			"settings":
 			{
-				"buffer_size": 681,
+				"buffer_size": 1256,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "work/public/template/inviter.html",
+			"settings":
+			{
+				"buffer_size": 1106,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "work/public/js/script.js",
+			"settings":
+			{
+				"buffer_size": 8966,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "work/public/js/identification.js",
+			"settings":
+			{
+				"buffer_size": 6061,
 				"line_ending": "Windows"
 			}
 		}
@@ -324,9 +344,17 @@
 	"command_palette":
 	{
 		"height": 392.0,
-		"last_filter": "",
+		"last_filter": "be",
 		"selected_items":
 		[
+			[
+				"be",
+				"Javascript Beautify"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
 			[
 				"insta",
 				"Package Control: Install Package"
@@ -397,6 +425,17 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Paladin/falloutSN/fallout_social_network/work/tools.js",
+		"/C/Users/Paladin/falloutSN/fallout_social_network/bower.json",
+		"/C/Users/Paladin/falloutSN/fallout_social_network/work/public/js/identification.js",
+		"/C/Users/Paladin/falloutSN/fallout_social_network/work/public/template/connexion.html",
+		"/C/Users/Paladin/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Paladin/falloutSN/fallout_social_network/work/public/css/style.less",
+		"/C/Users/Paladin/falloutSN/fallout_social_network/work/views/home.html",
+		"/C/Users/Paladin/falloutSN/fallout_social_network/work/public/template/inscription.html",
+		"/C/Users/Paladin/falloutSN/fallout_social_network/work/views/login.html",
+		"/C/Users/Paladin/falloutSN/fallout_social_network/work/public/js/bootstrap.alert.js",
+		"/C/Users/Paladin/falloutSN/bootstrap.alert/test.html",
 		"/C/Users/Paladin/falloutSN/fallout_social_network/work/views/404.html",
 		"/C/devjs/testPourGandi/www.benjaminherbulot.com/views/login.jade",
 		"/C/Users/Paladin/falloutSN/fallout_social_network/work/routes/account.js",
@@ -416,7 +455,6 @@
 		"/C/Users/Paladin/falloutSN/fallout_social_network/test html/template/connexion.html",
 		"/C/Users/Paladin/falloutSN/fallout_social_network/Gruntfile.js",
 		"/C/Users/Paladin/falloutSN/fallout_social_network/.bowerrc",
-		"/C/Users/Paladin/falloutSN/fallout_social_network/bower.json",
 		"/C/Users/Paladin/falloutSN/fallout_social_network/test html/template/mur.html",
 		"/C/Users/Paladin/falloutSN/fallout_social_network/test html/css/style_old.css",
 		"/C/Users/Paladin/falloutSN/fallout_social_network/test html/css/style.css",
@@ -457,13 +495,15 @@
 	],
 	"find":
 	{
-		"height": 36.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
 		"height": 93.0,
 		"where_history":
 		[
+			"C:\\Users\\Paladin\\falloutSN\\fallout_social_network\\work\\public",
+			"-node_modules/*.js",
 			""
 		]
 	},
@@ -472,6 +512,26 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"\"",
+			"ng-click",
+			"set_current_menu_button",
+			"template",
+			"set_current_template",
+			"this",
+			"checked",
+			".checked",
+			"mdp",
+			"doc",
+			"info",
+			"this.new_user",
+			" &&",
+			"==",
+			"!",
+			"if(",
+			":",
+			"4%",
+			"4",
+			"45",
 			"rl",
 			"fields[index]",
 			"elem",
@@ -586,6 +646,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"pwd",
 			"="
 		],
 		"reverse": false,
@@ -597,7 +658,7 @@
 	"groups":
 	[
 		{
-			"selected": 10,
+			"selected": 8,
 			"sheets":
 			[
 				{
@@ -636,15 +697,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1041,
+						"buffer_size": 1316,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								762,
-								762
+								1261,
+								1261
 							]
 						],
 						"settings":
@@ -652,10 +713,10 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 513.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -664,119 +725,31 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1892,
+						"buffer_size": 3121,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1844,
-								1844
+								1526,
+								1526
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1197.0,
+						"translation.y": 1153.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "work/public/js/identification.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2605,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2408,
-								2408
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1140.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/C/Users/Paladin/falloutSN/bootstrap.alert/test.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8091,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								568,
-								568
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1862.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "work/public/js/bootstrap.alert.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6937,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6464,
-								6464
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 2683.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
 					"file": "work/views/login.html",
 					"semi_transient": false,
 					"settings":
@@ -788,8 +761,8 @@
 						"selection":
 						[
 							[
-								647,
-								647
+								658,
+								591
 							]
 						],
 						"settings":
@@ -801,31 +774,117 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "work/public/template/inscription.html",
+					"buffer": 4,
+					"file": "work/views/home.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4898,
+						"buffer_size": 5088,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								924,
-								924
+								3156,
+								3156
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1191.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "work/public/template/friend_list.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 944,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								899,
+								899
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "work/public/template/mur.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1256,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								47,
+								47
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "work/public/template/inviter.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1106,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1000,
+								1015
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -836,117 +895,62 @@
 				},
 				{
 					"buffer": 8,
-					"file": "work/public/template/connexion.html",
+					"file": "work/public/js/script.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2181,
+						"buffer_size": 8966,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								205,
-								274
+								6255,
+								6255
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "work/views/home.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4626,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2950,
-								2950
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 465.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "work/public/css/style.less",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7756,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7387,
-								7387
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 8000.0,
+						"translation.y": 4600.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
-					"file": "work/tools.js",
+					"buffer": 9,
+					"file": "work/public/js/identification.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 681,
+						"buffer_size": 6061,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								610,
-								610
+								3112,
+								2677
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 978.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -995,7 +999,7 @@
 	"project": "fallout_sn_project.sublime-project",
 	"replace":
 	{
-		"height": 52.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":

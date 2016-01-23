@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
-//var db = require('../db');
+var db = require('../db');
 var session = require('express-session');
 
 router.use(express.static('views'));
@@ -41,5 +41,17 @@ router.get('/disconnect', function(req, res){
   });
 
 }); 
+
+router.get('/getMembers', function(req, res){
+	var coll = db.get().collection('user');
+	coll.find().toArray(function(err, docs){
+		res.json({members: docs});
+	});
+});
+
+router.post('/inviteMember', function(req, res){
+	console.log('/inviteMember');
+	res.json({res: true});
+});
 
 module.exports = router;

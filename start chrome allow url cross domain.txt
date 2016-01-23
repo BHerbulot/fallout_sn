@@ -1,0 +1,28 @@
+cd C:\Program Files (x86)\Google\Chrome\Application && chrome.exe --disable-web-security
+
+mount -t vboxsf Dropbox /home/pal/Bureau/partage
+
+cd C:\Users\Paladin\falloutSN\fallout_social_network\test html\css
+
+
+mongodb
+
+/cygdrive/c/devjs/mongodb/bin/mongod.exe --dbpath c:/devjs/mongodata
+
+
+db.user.insert({
+	user: "test", 
+	mail:"herbulot.benjamin@gmail.com", 
+	address: "12 rue labas", 
+	name: "bj", 
+	lastname: "herb", 
+	genre:"m", 
+	age: 447721200000, 
+	dinscription: new Date(), 
+	pwd: "coucou"
+});
+
+
+cd /cygdrive/c/Users/Paladin/falloutSN/fallout_social_network/work
+
+clear = printf "\033c"
