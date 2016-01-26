@@ -92,13 +92,9 @@ router.post('/tryInscription', function(req, res) {
         console.log('error form');
     } else {
         var collection = db.get().collection('user');
-        collection.find({
-            user: req.body.user
-        }).toArray(function(err, docs) {
+        collection.find({ user: req.body.user }).toArray(function(err, docs) {
             if (docs.length > 0) {
-                res.json({
-                    user_already_exist: true
-                });
+                res.json({ user_already_exist: true});
                 console.log("pseudo already used");
             } else {
                 collection.insert({
@@ -106,7 +102,6 @@ router.post('/tryInscription', function(req, res) {
                     pwd: req.body.pwd,
                     email: req.body.email
                 }, function(err, result) {
-                    sess = req.session;
                     req.session.user = req.body.user;
                     console.log('userName Saved');
                     res.json({res:"ok"});

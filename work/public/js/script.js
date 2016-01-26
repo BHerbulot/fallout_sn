@@ -38,15 +38,36 @@
                                       
                                       
 */
-  app.factory('services', function(){
+  app.factory('services', function($http){
     return{
-      get_date_formated: function(date){
-        var formated_date = $.dateformatter({
-          current_date: date,
-          format: 'd/m/Y H:i:s'
-        });
-        return formated_date;
-      },
+        get_date_formated: function(date){
+            var formated_date = $.dateformatter({
+              current_date: date,
+              format: 'd/m/Y H:i:s'
+            });
+            return formated_date;
+        },
+
+        get_current_user: function(){
+            var self = this;
+            console.log("haha",this.current_user);
+            if(!this.current_user){
+                $http({
+                    method: "get",
+                    url: "/getCurrentUser",
+                }).then(function(res){
+                    self.current_user = res.data.user;
+                    console.log(res.data.user);
+                    return self.current_user;
+                }, function(res) {
+                    console.log('error');
+                });
+            }else{
+                return self.current_user;
+            }
+        },
+
+        current_user: null,
     };
   });
 
@@ -213,6 +234,10 @@
       return services.get_date_formated(date);
     };
 
+    this.test = function(){
+        console.log("yo",services.get_current_user());
+    };
+
   }]);
 
 
@@ -228,14 +253,32 @@
 */
   app.controller('sn_member', function($http){
     this.members = [];
+    this.user = null;
 
     this.get_members = function(){
+      $http({
+        method: "get",
+        url: "/getFriends",
+        data: $.param({user_host: member, user_sender: this.user}),
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+      }).then(function(res){
+        self.members = res.data.members;
+        self.user = res.data.user;
+
+      }, function(res) {
+          console.log('error');
+      });
+
       var self = this;
       $http({
         method: "get",
         url: "/getMembers",
       }).then(function(res){
         self.members = res.data.members;
+        self.user = res.data.user;
+
       }, function(res) {
           console.log('error');
       });
@@ -245,7 +288,7 @@
       $http({
         method: "post",
         url: '/inviteMember',
-        data: $.param({user: member}),
+        data: $.param({user_host: member, user_sender: this.user}),
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         }
