@@ -39,7 +39,6 @@ router.post('/tryConnection', function(req, res) {
         user: req.body.user
     }).toArray(function(err, docs) {
         if (err) throw err;
-        console.log(docs);
         if (docs.length <= 0) {
             res.json({
                 res: 'error'

@@ -23,4 +23,13 @@ module.exports = {
 		});
 		return checked_fields;
 	},
+
+	wait_for_res: function(res, nb_fields, nb_fields_checked, obj_res){
+		if(nb_fields_checked < nb_fields){
+			console.log('not yet');
+			return;
+		}
+		console.log("i send");
+		res.json(obj_res);
+	},
 };

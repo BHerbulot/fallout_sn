@@ -1,7 +1,7 @@
 
 <div class="row" ng-controller="sn_member as ctrl_member">
 	<div after-render="ctrl_member.get_members()"></div>
-	<div ng-if="member.user != ctrl_member.user " class="col-xs-6 col-sm-6 col-md-4 col-lg-3" ng-repeat= "member in ctrl_member.members">
+	<div  class="col-xs-6 col-sm-6 col-md-4 col-lg-3" ng-repeat= "member in ctrl_member.members" ng-if="member.user != ctrl_member.user && member.state != 'friend'">
 		<div  class="member_box row">
 			<div class="row-height ">
 				<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 col-height">
@@ -19,8 +19,8 @@
 							<div  ng-if="member.online" class="online"></div>
 							<div  ng-if="!member.online" class="not-online"></div>
 						</div> -->
-						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							<button class="btn-sn" ng-click="ctrl_member.invite_member(member.user)" >inviter</button>
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+							<button class="btn-sn" ng-click="ctrl_member.invite_member($event , member.user)" >inviter</button>
 						</div>
 					</div>
 				</div>
