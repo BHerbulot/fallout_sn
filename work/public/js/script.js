@@ -25,6 +25,14 @@
             .when('/invite', {
                 templateUrl: 'template/inviter.html',
                 controller: 'wall_post'
+            })
+            .when('/personnel-wall', {
+                templateUrl: 'template/mur.html',
+                controller: 'wall_post'
+            })
+            .when('/general-wall', {
+                templateUrl: 'template/mur.html',
+                controller: 'wall_post'
             });
     });
     /*
@@ -56,13 +64,14 @@
                     }).then(function(res) {
                         self.current_user = res.data.user;
                         console.log(res.data.user);
-                        return self.current_user;
+                        //return res.data.user;
                     }, function(res) {
                         console.log('error');
                     });
                 } else {
                     return self.current_user;
                 }
+                return self.current_user;
             },
 
             current_user: null,
@@ -116,14 +125,14 @@
             url: '/message',
         }, ];
         this.button_mur = [{
-            name: 'mur',
+            name: 'general',
             selected: true,
-            url: '/',
+            url: '/general-wall',
             id: 0,
         }, {
-            name: 'mur',
-            selected: true,
-            url: '/',
+            name: 'personnel',
+            selected: false,
+            url: '/personnel-wall',
             id: 1,
         }, ];
         this.button_param = [{
@@ -145,9 +154,7 @@
 
         this.set_current_menu_button = function(button_name, index) {
             this.current_menu_button = this[button_name];
-            console.log("current menu", button_name);
             var val = index || 0;
-            console.log(index);
             this.set_current_sub_menu_button(val);
         };
 
@@ -174,54 +181,121 @@
 */
 
 
-    app.controller('wall_post', ['services',
-        function(services) {
-            this.posts = [{
-                date: new Date(1995, 11, 17),
-                message: 'coucou',
-                id: "0",
-                user: 'luke Skywalker',
-                comments: [{
-                    date: new Date(1995, 11, 17),
-                    message: 'Je suis ton père!',
-                    comment_owner: 'Dark Vador'
-                }, {
-                    date: new Date(1995, 11, 17),
-                    message: 'NNNNNNNOOOOOOOOONNNNNNNNNNN!!!!!',
-                    comment_owner: 'Luke Skywalker'
-                }, ],
-                comment: '',
-            }, {
-                date: new Date(),
-                message: 'Hola',
-                id: "1",
-                user: 'lui',
+    app.controller('wall_post', ['services', '$http',
+        function(services, $http) {
+            this.posts = [];
+            this.post_msg  = "";
+            this.post_back = [];
+            this.post_count = 0;
 
-                comment: '',
-            }, {
-                date: new Date(2015, 1, 15),
-                message: 'Lok tar',
-                id: "2",
-                comment: '',
-                user: ' elle',
-            }, ];
+            this.get_post = function(){
+                var self = this;
+                    $http({
+                        method: "post",
+                        url: "/get-all-posts",
+                        data: $.param({
+                            count: self.post_count,
+                        }),
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        }
+                    }).then(function(res) {
+                        _.each(res.data.posts,function(post){
+
+                            self.posts.push(post);
+                        });
+                        if(res.data.posts.length > 9 ){
+                            self.post_count +=10;
+                        }else{
+                            console.log("here");
+                            $('.ask-more-post').remove();
+                        }
+                        console.log(res.data.posts);
+
+                    }, function(res) {
+                        console.log('error');
+                    });
+            };
+            this.scroll_bot = function(){
+                setTimeout(function(){
+                  $('.post-container').scrollTop($('.post-container').prop('scrollHeight'));
+                },50);
+
+            };
+
             this.submit_comment = function(post) {
                 if (post.comment) {
-                    console.log(post.comment);
-                    post.comment = '';
+                    $http({
+                        method: "post",
+                        url: "/post-comment",
+                        data: $.param({
+                            user: post.user,
+                            comment: post.comment,
+                            _id: post._id,
+                        }),
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        }
+                    }).then(function(res) {
+                         post.comments.push({
+                            comment: post.comment,
+                            user: window.user,
+                            date: new Date(),
+                        });
+                        post.comment = '';
+                    }, function(res) {
+                        console.log('error');
+                    });
+                }
+            };
+
+            this.initialize = function(){
+                if (!window.user) {
+                    $http({
+                        method: "get",
+                        url: "/getCurrentUser",
+                    }).then(function(res) {
+                        window.user = res.data.user;
+                        //return res.data.user;
+                    }, function(res) {
+                        console.log('error');
+                    });
+                }
+                this.get_post();
+            };
+
+            this.submit_msg = function(post){
+                var self = this;
+                if(post.msg){
+                    console.log(post.msg);
+                    $http({
+                        method: "post",
+                        url: "/post-msg",
+                        data: $.param({
+                            post: post.msg
+                        }),
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        }
+                    }).then(function(res) {
+                        self.post_back.push(res.data.post_back.ops[0]);
+                        console.log(self.post_back);
+                        self.scroll_bot();
+                    }, function(res) {
+                        console.log('error');
+                    });
+                    post.msg = "";
                 }
             };
 
             this.get_date_formated = function(date) {
-                return services.get_date_formated(date);
+                return services.get_date_formated(new Date(date));
             };
 
-            this.test = function() {
-                console.log("yo", services.get_current_user());
-            };
-
+            this.tpl = "template/post_back.html";
         }
     ]);
+
 
 
     /*
@@ -414,7 +488,6 @@
                     if(self.invitations !== undefined){
                         self.all = self.all.concat(self.invitations);
                     }
-                    console.log(self.all);
                 });
             };
         }

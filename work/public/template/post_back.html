@@ -1,0 +1,24 @@
+<div class="post-box row" ng-repeat= "postback in ctrl_post.post_back">
+	<div class="post-date" >
+		<p>{{ctrl_post.get_date_formated(postback.date)}}</p>
+		<p>{{postback.user}} </p>
+	</div>
+	<div class="post" ><p>{{postback.post}}</p></div>
+	<div class="row no-mg commented">
+		<div class="col-md-12 col-xs-12 col-lg-12 col-sm-12 ">
+			<p>commenter</p>
+		</div>
+		<form ng-submit="ctrl_post.submit_comment(postback)" class="row no-mg row-height">
+			<div class="col-md-10 col-xs-10 col-lg-10 col-sm-10 col-height">
+				<textarea ng-model="postback.comment" class="vcenter form-control"></textarea>
+			</div>
+			<div class="col-md-2 col-xs-2 col-lg-2 col-sm-2 col-height col-middle"  >
+				<input type="submit" value="Poster" class="btn-sn">
+			</div>
+		</form>
+	</div>
+	<div class="comment-box" ng-repeat= "com in postback.comments">
+		<div class="comment-date col-md-3 col-xs-3 col-lg-3 col-sm-3 "><p>{{ctrl_post.get_date_formated(com.date)}}</p><p>{{com.user}}</p></div>
+		<div class="comment col-md-9 col-xs-9 col-lg-9 col-sm-9 "><p>{{com.comment}}</p></div>
+	</div>
+</div>

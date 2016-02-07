@@ -4,6 +4,8 @@ var bodyParser = require('body-parser');
 var db = require('../db');
 var session = require('express-session');
 var tools = require('../tools');
+var promise = require('promise');
+var mongodb = require('mongodb');
 
 router.use(express.static('views'));
 
@@ -57,6 +59,7 @@ router.get('/getMembers', function(req, res) {
 });
 
 router.get('/getCurrentUser', function(req, res) {
+    console.log(req.session.user);
     res.json({
         user: req.session.user
     });
@@ -68,54 +71,68 @@ router.get('/getFriends', function(req, res) {
         user: req.session.user
     }).toArray(function(err, docs) {
         console.log('getFriends');
-        var doc = docs[0] === undefined ? {}: docs[0];
-        if(doc.friends.length === 0 && doc.invite.length === 0 && doc.invitation.length === 0 ){
-        	console.log('pas d\'amis');
-        	res.json({no_friends:true});
-        }else{
-        	var member_coll = db.get().collection('user');
+        var doc = docs[0] === undefined ? {} : docs[0];
+        if (doc.friends.length === 0 && doc.invite.length === 0 && doc.invitation.length === 0) {
+            console.log('pas d\'amis');
+            res.json({
+                no_friends: true
+            });
+        } else {
+            var member_coll = db.get().collection('user');
 
-        	var fields_checked = 0;
-        	var fields_target = 3;
-        	var obj_res = {};
+            var fields_checked = 0;
+            var fields_target = 3;
+            var obj_res = {};
 
-        	console.log(doc.friends);
-        	if(doc.friends.length !== 0){
-        		console.log('ok');
-        		member_coll.find({user: {$in: doc.friends}}).toArray(function(err, result){
-        			console.log(result);
-        			fields_checked++;
-        			obj_res.friends = result;
-        			tools.wait_for_res(res, fields_target, fields_checked, obj_res);
-        		});
-        	}else{
-        		fields_checked++;
-    			tools.wait_for_res(res, fields_target, fields_checked, obj_res);
-        	}
-        	if(doc.invite.length !== 0){
-        		member_coll.find({user: {$in: doc.invite}}).toArray(function(err, result){
-        			obj_res.friends = result;
-        			 fields_checked++;
-        			 tools.wait_for_res(res, fields_target, fields_checked, obj_res);
-        		});
-        	}else{
-        		fields_checked++;
-    			tools.wait_for_res(res, fields_target, fields_checked, obj_res);
-        	}
-        	if(doc.invitation.length !== 0){
-        		member_coll.find({user: {$in: doc.invitation}}).toArray(function(err, result){
-        			obj_res.friends = result;
-        			 fields_checked++;
-        			 tools.wait_for_res(res, fields_target, fields_checked, obj_res);
-        		});
-        	}else{
-        		fields_checked++;
-    			tools.wait_for_res(res, fields_target, fields_checked, obj_res);
-        	}
+            console.log(doc.friends);
+            if (doc.friends.length !== 0) {
+                console.log('ok');
+                member_coll.find({
+                    user: {
+                        $in: doc.friends
+                    }
+                }).toArray(function(err, result) {
+                    console.log(result);
+                    fields_checked++;
+                    obj_res.friends = result;
+                    tools.wait_for_res(res, fields_target, fields_checked, obj_res);
+                });
+            } else {
+                fields_checked++;
+                tools.wait_for_res(res, fields_target, fields_checked, obj_res);
+            }
+            if (doc.invite.length !== 0) {
+                member_coll.find({
+                    user: {
+                        $in: doc.invite
+                    }
+                }).toArray(function(err, result) {
+                    obj_res.friends = result;
+                    fields_checked++;
+                    tools.wait_for_res(res, fields_target, fields_checked, obj_res);
+                });
+            } else {
+                fields_checked++;
+                tools.wait_for_res(res, fields_target, fields_checked, obj_res);
+            }
+            if (doc.invitation.length !== 0) {
+                member_coll.find({
+                    user: {
+                        $in: doc.invitation
+                    }
+                }).toArray(function(err, result) {
+                    obj_res.friends = result;
+                    fields_checked++;
+                    tools.wait_for_res(res, fields_target, fields_checked, obj_res);
+                });
+            } else {
+                fields_checked++;
+                tools.wait_for_res(res, fields_target, fields_checked, obj_res);
+            }
         }
 
 
-/*        res.json({
+        /*        res.json({
             doc: doc,
             user: req.session.user
         });*/
@@ -164,6 +181,64 @@ router.post('/inviteMember', function(req, res) {
                 });
             });
         }
+    });
+});
+
+
+
+
+/* wall */
+
+router.post('/post-msg', function(req, res) {
+    console.log('/post-msg');
+    var coll = db.get().collection('posts');
+    var created_post;
+    coll.insert({
+        user: req.session.user,
+        post: req.body.post,
+        comments: [],
+        date: new Date(),
+    },function(err, records){
+    	created_post = records;
+	    res.json({
+	        post_back: created_post
+	    });
+    });
+});
+
+router.post('/post-comment', function(req, res) {
+    console.log('/post-comment');
+    var coll = db.get().collection('posts');
+    var post_id = new mongodb.ObjectID(req.body._id);
+    console.log(req.body.comment);
+    coll.update({
+        _id: post_id
+    },{
+    	$push:{
+    		comments:{ 
+    			comment: req.body.comment,
+    			date: new Date(),
+    			user: req.session.user,
+    		}
+    	}
+    },function(err, records) {
+        if (err) throw err;
+        console.log(records);
+        res.json({
+            comment_back: records
+        });
+    });
+});
+
+router.post('/get-all-posts', function(req, res) {
+    console.log('/get-all-posts');
+    var last_post_found =  parseInt(req.body.count);
+    console.log(last_post_found);
+    var coll = db.get().collection('posts');
+    coll.find().limit(10).skip(last_post_found).toArray(function(err, docs) {
+        res.json({
+            posts: docs
+        });
     });
 });
 

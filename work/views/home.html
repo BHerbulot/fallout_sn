@@ -36,36 +36,6 @@
 				<span ng-repeat= "sub_title in ctrl.current_menu_button track by $index" ng-class="{selected: sub_title.selected}" ng-click="ctrl.set_current_sub_menu_button($index);">{{sub_title.name}}</span>
 			</div>
 			<div class="row tpl-container">
-<!-- 				<div class="col-md-4 col-xs-4 col-lg-4 col-sm-4 sn-member-container">
-					<div ng-controller="sn_member as ctrl_member">
-						<h2>Membres</h2>
-						<div class="row member-title">
-							<div class="col-md-6 col-xs-6 col-lg-6 col-sm-6">Name</div>
-							<div class="col-md-3 col-xs-3 col-lg-3 col-sm-3">Online</div>
-							<div class="col-md-3 col-xs-3 col-lg-3 col-sm-3">Ami</div>
-						</div>
-						<div class="row member-info" ng-repeat= "member in ctrl_member.members">
-							<div class="col-md-6 col-xs-6 col-lg-6 col-sm-6 name"><p >{{member.name}}</p></div>
-							<div class="col-md-3 col-xs-3 col-lg-3 col-sm-3">
-								<div  ng-if="member.online" class="online"></div>
-								<div  ng-if="!member.online" class="not-online"></div>
-							</div>
-							<div class="col-md-3 col-xs-3 col-lg-3 col-sm-3 friend">
-								<span ng-if="member.friend" class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
-								<span ng-if="!member.friend" class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
-							</div>
-						</div>
-					</div>
-				</div> -->
-
-
-
-<!-- 				<div class="col-md-12 col-xs-12 col-lg-12 col-sm-12 articles-cont" ng-include="ctrl.template" >
-					
-				</div>
-
- -->			
- 				
 				<div  class="col-md-12 col-xs-12 col-lg-12 col-sm-12 articles-cont" ng-view>
 		        </div>
 			</div>

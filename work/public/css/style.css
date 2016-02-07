@@ -21,6 +21,11 @@ a:active {
 a:hover {
   color: #006604;
 }
+/*.articles-cont{
+	overflow: auto;
+	//background-color: red;
+	height: 77vh;
+}*/
 .nav-bar {
   font-size: 25px;
   margin-top: 50px;
@@ -140,6 +145,16 @@ a:hover {
 .tpl-container .post-box.row {
   margin-left: 0;
   margin-right: 0;
+}
+.post-container {
+  overflow: auto;
+  height: 65vh;
+}
+.post-editer {
+  margin-top: 15px;
+  width: 100%;
+  border: 2px solid;
+  padding: 20px;
 }
 /*inviter amis part*/
 .member_box {

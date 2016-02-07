@@ -1,28 +1,48 @@
 <div after-render="ctrl.set_current_menu_button('button_mur', 0)"></div>
 <div  ng-controller = "wall_post as ctrl_post">
-	<div class="post-box row" ng-repeat= "post in ctrl_post.posts">
-		<div class="post-date" >
-			<p>{{ctrl_post.get_date_formated(post.date)}}</p>
-			<p>{{post.user}} </p>
-		</div>
-		<div class="post" ><p>{{post.message}}</p></div>
-		<div class="row no-mg commented">
-			<div class="col-md-12 col-xs-12 col-lg-12 col-sm-12 ">
-				<p>commenter</p>
+	<div after-render="ctrl_post.initialize()"></div>
+	<div class="post-container">
+		<div class="post-box row" ng-repeat= "post in ctrl_post.posts">
+			<div class="post-date" >
+				<p>{{ctrl_post.get_date_formated(post.date)}}</p>
+				<p>{{post.user}} </p>
 			</div>
-			<form id="form-{{post.id}}" ng-submit="ctrl_post.submit_comment(post)" class="row no-mg row-height">
-				<div class="col-md-10 col-xs-10 col-lg-10 col-sm-10 col-height">
-					<textarea id="text-{{post.id}}" ng-model="post.comment" class="vcenter form-control"></textarea>
+			<div class="post" ><p>{{post.post}}</p></div>
+			<div class="row no-mg commented">
+				<div class="col-md-12 col-xs-12 col-lg-12 col-sm-12 ">
+					<p>commenter</p>
 				</div>
-				<div class="col-md-2 col-xs-2 col-lg-2 col-sm-2 col-height col-middle"  >
-					<input type="submit" value="Poster" class="btn-sn">
-				</div>
-			</form>
-		</div>
+				<form ng-submit="ctrl_post.submit_comment(post)" class="row no-mg row-height">
+					<div class="col-md-10 col-xs-10 col-lg-10 col-sm-10 col-height">
+						<textarea ng-model="post.comment" class="vcenter form-control"></textarea>
+					</div>
+					<div class="col-md-2 col-xs-2 col-lg-2 col-sm-2 col-height col-middle"  >
+						<input type="submit" value="Poster" class="btn-sn">
+					</div>
+				</form>
+			</div>
 			<div class="comment-box" ng-repeat= "com in post.comments">
-				<div class="comment-date col-md-3 col-xs-3 col-lg-3 col-sm-3 "><p>{{ctrl_post.get_date_formated(com.date)}}</p><p>{{com.comment_owner}}</p></div>
-				<div class="comment col-md-9 col-xs-9 col-lg-9 col-sm-9 "><p>{{com.message}}</p></div>
+				<div class="comment-date col-md-3 col-xs-3 col-lg-3 col-sm-3 "><p>{{ctrl_post.get_date_formated(com.date)}}</p><p>{{com.user}}</p></div>
+				<div class="comment col-md-9 col-xs-9 col-lg-9 col-sm-9 "><p>{{com.comment}}</p></div>
 			</div>
+		</div>
+		<div ng-if="ctrl_post.post_back.length > 0 ">
+			<div ng-include="ctrl_post.tpl"></div>
+		</div>
 	</div>
-	<div ng-click="ctrl_post.test()" style="position: absolute; bottom: 35px;">coucou</div>
+	<div class="ask-more-post" ng-click="ctrl_post.get_post()">afficher plus de post</div>
+	
+
+	<div class="post-editer">
+		<form id="post-msg" ng-submit="ctrl_post.submit_msg(post)" >
+			<div class="row">
+				<div class="col-md-10 col-xs-10 col-lg-10 col-sm-10">
+					<input id="current-post" type="text"  class="form-control" ng-model="post.msg">
+				</div>
+				<div class="col-md-2 col-xs-2 col-lg-2 col-sm-2">
+					<input type="submit" value="Poster"  class="btn-sn form-control">
+				</div>
+			</div>
+		</form>
+	</div>
 </div>
