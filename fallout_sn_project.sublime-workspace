@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"wa",
+				"wall_type"
+			],
+			[
+				"re",
+				"req"
+			],
+			[
+				"if",
+				"if	if"
+			],
+			[
+				"lo",
+				"location"
+			],
+			[
+				"comme",
+				"comment"
+			],
+			[
+				"res",
+				"res"
+			],
+			[
 				"post",
 				"post_count"
 			],
@@ -46,14 +70,6 @@
 			[
 				"te",
 				"template"
-			],
-			[
-				"res",
-				"restrict"
-			],
-			[
-				"re",
-				"return"
 			],
 			[
 				"crea",
@@ -391,7 +407,7 @@
 			"file": "work/routes/base.js",
 			"settings":
 			{
-				"buffer_size": 6604,
+				"buffer_size": 6963,
 				"line_ending": "Windows"
 			}
 		},
@@ -399,7 +415,7 @@
 			"file": "work/public/template/friend_list.html",
 			"settings":
 			{
-				"buffer_size": 1492,
+				"buffer_size": 1416,
 				"line_ending": "Windows"
 			}
 		},
@@ -407,7 +423,7 @@
 			"file": "work/public/js/script.js",
 			"settings":
 			{
-				"buffer_size": 19354,
+				"buffer_size": 19451,
 				"line_ending": "Windows"
 			}
 		},
@@ -415,15 +431,7 @@
 			"file": "work/public/template/mur.html",
 			"settings":
 			{
-				"buffer_size": 1985,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "work/public/template/test.html",
-			"settings":
-			{
-				"buffer_size": 1082,
+				"buffer_size": 1856,
 				"line_ending": "Windows"
 			}
 		},
@@ -529,11 +537,11 @@
 		"/C/Users/Paladin/falloutSN/fallout_social_network",
 		"/C/Users/Paladin/falloutSN/fallout_social_network/work",
 		"/C/Users/Paladin/falloutSN/fallout_social_network/work/public",
-		"/C/Users/Paladin/falloutSN/fallout_social_network/work/public/template",
-		"/C/Users/Paladin/falloutSN/fallout_social_network/work/views"
+		"/C/Users/Paladin/falloutSN/fallout_social_network/work/public/template"
 	],
 	"file_history":
 	[
+		"/C/Users/Paladin/falloutSN/fallout_social_network/work/public/template/post_back.html",
 		"/C/Users/Paladin/falloutSN/fallout_social_network/work/routes/account.js",
 		"/C/Users/Paladin/falloutSN/fallout_social_network/work/index.js",
 		"/C/Users/Paladin/falloutSN/fallout_social_network/work/public/js/identification.js",
@@ -624,6 +632,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"/",
+			"when",
+			"/",
+			"log",
 			"ctrl_post",
 			"addCurrentPost",
 			"get_current_user",
@@ -747,11 +759,7 @@
 			"3",
 			"8",
 			"	display: inline-block;",
-			"font-weight: bold;",
-			"4",
-			"Message",
-			"{\n\n      },",
-			"4"
+			"font-weight: bold;"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -800,7 +808,7 @@
 						"translation.y": 266.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -829,7 +837,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -859,7 +867,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -868,15 +876,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6604,
+						"buffer_size": 6963,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6338,
-								6352
+								6519,
+								6528
 							]
 						],
 						"settings":
@@ -885,10 +893,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 4021.0,
+						"translation.y": 3903.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -897,104 +905,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1492,
+						"buffer_size": 1416,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								278,
-								278
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "work/public/js/script.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 19354,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6095,
-								6095
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true,
-							"word_wrap": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3306.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "work/public/template/mur.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1985,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1540,
-								1540
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "work/public/template/test.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1082,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								223,
-								223
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1010,7 +929,67 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 5,
+					"file": "work/public/js/script.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 19451,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7962,
+								7962
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4161.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "work/public/template/mur.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1856,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								898,
+								898
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 114.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
 					"file": "work/tools.js",
 					"semi_transient": false,
 					"settings":
@@ -1035,11 +1014,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 8,
 					"file": "work/public/css/style.less",
 					"semi_transient": false,
 					"settings":
@@ -1063,7 +1042,7 @@
 						"translation.y": 3223.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 8,
 					"type": "text"
 				}
 			]

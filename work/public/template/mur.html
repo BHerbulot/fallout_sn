@@ -1,4 +1,4 @@
-<div after-render="ctrl.set_current_menu_button('button_mur', 0)"></div>
+
 <div  ng-controller = "wall_post as ctrl_post">
 	<div after-render="ctrl_post.initialize()"></div>
 	<div class="post-container">
@@ -29,6 +29,7 @@
 		<div ng-if="ctrl_post.post_back.length > 0 ">
 			<div ng-include="ctrl_post.tpl"></div>
 		</div>
+		<div class="no-post" ng-if="ctrl_post.posts.length == 0" >Aucun post trouvé</div>
 	</div>
 	<div class="ask-more-post" ng-click="ctrl_post.get_post()">afficher plus de post</div>
 	

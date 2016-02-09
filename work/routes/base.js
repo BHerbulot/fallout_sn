@@ -59,7 +59,6 @@ router.get('/getMembers', function(req, res) {
 });
 
 router.get('/getCurrentUser', function(req, res) {
-    console.log(req.session.user);
     res.json({
         user: req.session.user
     });
@@ -82,9 +81,11 @@ router.get('/getFriends', function(req, res) {
 
             var fields_checked = 0;
             var fields_target = 3;
-            var obj_res = {};
+            var obj_res = {
+            	//simple_avatar: "img/avatar.png",
+            };
 
-            console.log(doc.friends);
+
             if (doc.friends.length !== 0) {
                 console.log('ok');
                 member_coll.find({
@@ -92,7 +93,6 @@ router.get('/getFriends', function(req, res) {
                         $in: doc.friends
                     }
                 }).toArray(function(err, result) {
-                    console.log(result);
                     fields_checked++;
                     obj_res.friends = result;
                     tools.wait_for_res(res, fields_target, fields_checked, obj_res);
@@ -210,7 +210,6 @@ router.post('/post-comment', function(req, res) {
     console.log('/post-comment');
     var coll = db.get().collection('posts');
     var post_id = new mongodb.ObjectID(req.body._id);
-    console.log(req.body.comment);
     coll.update({
         _id: post_id
     },{
@@ -223,7 +222,6 @@ router.post('/post-comment', function(req, res) {
     	}
     },function(err, records) {
         if (err) throw err;
-        console.log(records);
         res.json({
             comment_back: records
         });
@@ -233,13 +231,24 @@ router.post('/post-comment', function(req, res) {
 router.post('/get-all-posts', function(req, res) {
     console.log('/get-all-posts');
     var last_post_found =  parseInt(req.body.count);
-    console.log(last_post_found);
+    var wall_type = req.body.wall_type;
     var coll = db.get().collection('posts');
-    coll.find().limit(10).skip(last_post_found).toArray(function(err, docs) {
+    var user_param = {};
+    if(wall_type == "/general-wall"){
+    	user_param = {};
+    }else if(wall_type == "/personnel-wall"){
+    	user_param = {user: req.session.user};
+    }else if(wall_type == "/friends-wall"){
+    	console.log(req.body.friend_wall);
+    	user_param = {user: req.body.friend_wall};
+    }
+
+    coll.find(user_param).limit(10).skip(last_post_found).toArray(function(err, docs) {
         res.json({
             posts: docs
         });
     });
+
 });
 
 module.exports = router;

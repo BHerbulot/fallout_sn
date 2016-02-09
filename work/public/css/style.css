@@ -148,7 +148,12 @@ a:hover {
 }
 .post-container {
   overflow: auto;
-  height: 65vh;
+  height: 62vh;
+}
+.no-post {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 45px;
 }
 .post-editer {
   margin-top: 15px;

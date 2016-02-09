@@ -33,6 +33,10 @@
             .when('/general-wall', {
                 templateUrl: 'template/mur.html',
                 controller: 'wall_post'
+            })
+            .when('/friends-wall/:user_name', {
+                templateUrl: 'template/mur.html',
+                controller: 'wall_post'
             });
     });
     /*
@@ -175,18 +179,19 @@
  __      ____ _| | |
  \ \ /\ / / _` | | |
   \ V  V / (_| | | |
-   \_/\_/ \__,_|_|_|
-                    
-                    
+   \_/\_/ \__,_|_|_|                          
 */
 
 
-    app.controller('wall_post', ['services', '$http',
-        function(services, $http) {
+    app.controller('wall_post', ['services', '$http', '$location', "$routeParams",
+        function(services, $http, $location, $routeParams) {
             this.posts = [];
             this.post_msg  = "";
             this.post_back = [];
             this.post_count = 0;
+            this.wall_type = null; //determine sir on est dans le mur generale, locale ou d'un amis
+            this.friend_wall = null;
+
 
             this.get_post = function(){
                 var self = this;
@@ -195,11 +200,14 @@
                         url: "/get-all-posts",
                         data: $.param({
                             count: self.post_count,
+                            wall_type: self.wall_type,
+                            friend_wall: self.friend_wall,
                         }),
                         headers: {
                             'Content-Type': 'application/x-www-form-urlencoded'
                         }
                     }).then(function(res) {
+                        console.log(res.data.posts);
                         _.each(res.data.posts,function(post){
 
                             self.posts.push(post);
@@ -207,10 +215,9 @@
                         if(res.data.posts.length > 9 ){
                             self.post_count +=10;
                         }else{
-                            console.log("here");
                             $('.ask-more-post').remove();
                         }
-                        console.log(res.data.posts);
+
 
                     }, function(res) {
                         console.log('error');
@@ -219,7 +226,7 @@
             this.scroll_bot = function(){
                 setTimeout(function(){
                   $('.post-container').scrollTop($('.post-container').prop('scrollHeight'));
-                },50);
+            },50);
 
             };
 
@@ -250,6 +257,14 @@
             };
 
             this.initialize = function(){
+                console.log($location.$$path);
+                this.wall_type = $location.$$path;
+
+                if($routeParams.user_name){
+                    this.friend_wall = $routeParams.user_name;
+                    this.wall_type = "/friends-wall";
+
+                }
                 if (!window.user) {
                     $http({
                         method: "get",
@@ -267,7 +282,6 @@
             this.submit_msg = function(post){
                 var self = this;
                 if(post.msg){
-                    console.log(post.msg);
                     $http({
                         method: "post",
                         url: "/post-msg",
@@ -279,7 +293,6 @@
                         }
                     }).then(function(res) {
                         self.post_back.push(res.data.post_back.ops[0]);
-                        console.log(self.post_back);
                         self.scroll_bot();
                     }, function(res) {
                         console.log('error');
@@ -329,10 +342,8 @@
                     }
                 }).then(function(res) {
                     if(!res.data.no_friends){
-                        console.log(res.data);
                         if(res.data.hasOwnProperty('friends')){
                             self.friends = res.data.friends;
-                            console.log(self.friends[0]);
                         }
                         if(res.data.hasOwnProperty('invites')){
                             self.invite = res.data.invites;
@@ -446,6 +457,7 @@
             this.friends = [];
             this.invite = [];
             this.invitation = [];
+            this.simple_avatar = "/img/avatar.png";
 
             this.get_friends = function(){
                 var self = this;
@@ -459,7 +471,7 @@
                         'Content-Type': 'application/x-www-form-urlencoded'
                     }
                 }).then(function(res) {
-                    console.log(res.data);
+                    //self.simple_avatar = res.data.simple_avatar;
                     if(res.data.hasOwnProperty('friends')){
                         self.friends = res.data.friends;
                         _.each(self.friends, function(elem){
