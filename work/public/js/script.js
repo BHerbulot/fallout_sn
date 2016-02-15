@@ -1,5 +1,5 @@
 (function() {
-    var app = angular.module('pipboy', ['ngRoute']);
+    var app = angular.module('pipboy', ['ngRoute', 'autocomplete']);
 
     /*
                    __ _       
@@ -36,6 +36,14 @@
             })
             .when('/friends-wall/:user_name', {
                 templateUrl: 'template/mur.html',
+                controller: 'wall_post'
+            })
+            .when('/user-info', {
+                templateUrl: 'template/info.html',
+                controller: 'wall_post'
+            })
+            .when('/disconnect', {
+                templateUrl: 'template/disconnect.html',
                 controller: 'wall_post'
             });
     });
@@ -143,7 +151,7 @@
             name: 'infos',
             selected: true,
             id: 0,
-            url: '/info',
+            url: '/user-info',
         }, {
             name: 'deconnexion',
             selected: false,
@@ -207,7 +215,6 @@
                             'Content-Type': 'application/x-www-form-urlencoded'
                         }
                     }).then(function(res) {
-                        console.log(res.data.posts);
                         _.each(res.data.posts,function(post){
 
                             self.posts.push(post);
@@ -257,7 +264,6 @@
             };
 
             this.initialize = function(){
-                console.log($location.$$path);
                 this.wall_type = $location.$$path;
 
                 if($routeParams.user_name){
@@ -324,6 +330,7 @@
     app.controller('sn_member', ['services', '$http',
         function(services, $http) {
             this.members = [];
+            this.members_names = [];
             this.friends = [];
             this.invite = [];
             this.invitation = [];
@@ -358,6 +365,7 @@
                     }).then(function(res) {
                         self.members = res.data.members;
                         self.user = res.data.user;
+                        var self2 = self;
                         self.update_members();
                     }, function(res) {
                         console.log('error');
@@ -383,28 +391,16 @@
                     }
                     
                 }
-/*                _.each(this.friends, function(doc){
-                    doc = { user: doc, state: 'friend' };
-                    self.friends.splice(0,1,doc);
+                _.each(this.members, function(member){
+                    self.members_names.push(member.user);
                 });
-                _.each(this.invite, function(doc){
-                    doc = { user: doc, state: 'invite' };
-                    self.invite.splice(0,1,doc);
-                });
-                _.each(this.invitation, function(doc){
-                    doc = { user: doc, state: 'invitation' };
-                    self.invitation.splice(0,1,doc);
-                });
-
-                this.members = this.members.concat(this.friends);
-                this.members = this.members.concat(this.invite);
-                this.members = this.members.concat(this.invitation);
-                console.log(this.members);*/
-
+                var index = this.members_names.indexOf(this.user);
+                this.members_names.splice(index,1);
+                console.log(self.members_names);
             };
 
-            this.invite_member = function($event, member) {
-                $($event.target).parents('.member_box').remove();
+            this.invite_member = function(member) {
+                var self = this;
                 $http({
                     method: "post",
                     url: '/inviteMember',
@@ -426,6 +422,7 @@
                             click_outside_for_close: false,
                             debug: true,
                         });
+                        self.get_members();
                     }
                 }, function(res) {
                     $.alert({
@@ -472,6 +469,7 @@
                     }
                 }).then(function(res) {
                     //self.simple_avatar = res.data.simple_avatar;
+                    console.log(res.data);
                     if(res.data.hasOwnProperty('friends')){
                         self.friends = res.data.friends;
                         _.each(self.friends, function(elem){
@@ -479,13 +477,13 @@
                         });
                     }
                     if(res.data.hasOwnProperty('invites')){
-                        self.invite = res.data.invites;
+                        self.invites = res.data.invites;
                         _.each(self.invites, function(elem){
                             elem.state = 'invites';
                         });
                     }
                     if(res.data.hasOwnProperty('invitations')){
-                        self.invitation = res.data.invitations;
+                        self.invitations = res.data.invitations;
                         _.each(self.invitations, function(elem){
                             elem.state = 'invitations';
                         });
@@ -500,13 +498,95 @@
                     if(self.invitations !== undefined){
                         self.all = self.all.concat(self.invitations);
                     }
+                    console.log(self.all);
+                });
+            };
+
+            this.accept_invitation = function($event,member){
+                var self = this;
+
+                $http({
+                    method: "post",
+                    url: '/accept-invitation',
+                    data: $.param({
+                        user_host: member,
+                    }),
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    }
+                }).then(function(res) {
+                    $($event.target).parents('.member_box').remove();
+                        self.get_friends();
+                }, function(res) {
+                    $.alert({
+                        title: 'Erreur serveur',
+                        body: 'Votre invitation n\'a pas put être envoyée',
+                        is_delayed: false,
+                        text_confirm: 'ok',
+                        extra_class: 'xtra',
+                        click_outside_for_close: false,
+                        debug: true,
+                    });
                 });
             };
         }
     ]);
 
+/*
+  _        __      
+ (_)      / _|     
+  _ _ __ | |_ ___  
+ | | '_ \|  _/ _ \ 
+ | | | | | || (_) |
+ |_|_| |_|_| \___/ 
+                   
+                   
+*/
+ app.controller('user_info', ['services', '$http',
+    function(services, $http) {
+        this.info = null;
 
+        this.get_info = function(){
+            var self = this;
+            $http({
+                method: "get",
+                url: '/get-user-info',
+            }).then(function(res) {
+                console.log(res);
+                self.info = res.data.info;
+                console.log(self.info);
+            }, function(res) {
+                console.log('error');
+            });
+        };
 
+        this.set_info = function(){
+            var self = this;
+            $http({
+                method: "post",
+                url: '/set-info',
+                data: $.param({
+                    info: self.info,
+                }),
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            }).then(function(res) {
+                    console.log('here');
+            }, function(res) {
+                $.alert({
+                    title: 'Erreur serveur',
+                    body: 'Votre invitation n\'a pas put être envoyée',
+                    is_delayed: false,
+                    text_confirm: 'ok',
+                    extra_class: 'xtra',
+                    click_outside_for_close: false,
+                    debug: true,
+                });
+            });
+        };
+    }
+]);
 
     /*
        _           _   
@@ -588,4 +668,55 @@
             };
         }
     ]);
+
+/*
+      _                
+     | |               
+   __| | ___  ___ ___  
+  / _` |/ _ \/ __/ _ \ 
+ | (_| |  __/ (_| (_) |
+  \__,_|\___|\___\___/ 
+                       
+                       
+*/
+
+    app.controller('disco',['services', '$http', '$window',
+        function(services, $http, $window) {
+        this.on_disconnect = function(){
+            //a href="/disconnect" style="position: absolute; top: 0; left: 0;">Déconnexion</a>
+            var self = this;
+            $.alert({
+                title: 'Déconnexion',
+                body: 'Souahaitez vous vous déconnecter?',
+                is_delayed: false,
+                text_confirm: 'oui',
+                text_decline: 'non',
+                extra_class: 'xtra',
+                click_outside_for_close: false,
+                callback_confirm: self.bye,
+                debug: true,
+            });
+        };
+
+        this.bye = function(){
+            
+            var self = this;
+            $http({
+                method: "get",
+                url: '/disconnect',
+            }).then(function(res) {
+                    console.log('here');
+                    $window.location.href = '/login';
+            }, function(res) {
+                $.alert({
+                    title: 'Erreur serveur',
+                    is_delayed: false,
+                    text_confirm: 'ok',
+                    extra_class: 'xtra',
+                    click_outside_for_close: false,
+                    debug: true,
+                });
+            });
+        };
+    }]);   
 })();

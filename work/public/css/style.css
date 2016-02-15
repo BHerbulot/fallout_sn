@@ -150,6 +150,11 @@ a:hover {
   overflow: auto;
   height: 62vh;
 }
+.of-container {
+  overflow: auto;
+  overflow-x: hidden;
+  height: 75vh;
+}
 .no-post {
   text-align: center;
   font-size: 60px;
@@ -251,6 +256,18 @@ a:hover {
   border: none;
   border-radius: 0;
 }
+.btn-submit {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 15px;
+  background-color: #00FF0A;
+  color: black;
+  border: none;
+  border-radius: 0;
+}
+.btn-submit:active {
+  background-color: #006604;
+}
 .btn-sn {
   background-color: #00FF0A;
   color: black;
@@ -283,6 +300,7 @@ a:hover {
   padding: 15px 0 ;
 }
 form input.form-control,
+form textarea.form-control,
 form button {
   background-color: #00FF0A;
   color: black;
@@ -379,7 +397,8 @@ form button {
   color: #00FF0A;
   border: none;
 }
-.xtra .modal-footer {
+.xtra .modal-footer,
+.deco-container {
   vertical-align: middle;
   padding: 0;
   color: black;
@@ -388,7 +407,8 @@ form button {
   display: table;
   width: 100%;
 }
-.xtra .modal-footer .btn-default {
+.xtra .modal-footer .btn-default,
+.btn-default {
   background-color: #00FF0A;
   vertical-align: middle;
   color: black;
@@ -401,7 +421,8 @@ form button {
   border-left: 2px solid black;
   margin-bottom: 2px;
 }
-.xtra .modal-footer .btn-primary {
+.xtra .modal-footer .btn-primary,
+.btn-primary {
   background-color: #00FF0A;
   vertical-align: middle;
   color: black;
@@ -414,4 +435,52 @@ form button {
   border-left: 1px solid black;
   border-right: 2px solid black;
   margin-bottom: 2px;
+}
+/* AUTOCOMPLETE */
+.autocomplete {
+  width: 100%;
+  position: relative;
+}
+.autocomplete input {
+  font-size: 1.2em;
+  width: 100%;
+  padding: 0.4em;
+  background-color: #00FF0A;
+  color: black;
+  border: none;
+  border-radius: 0;
+}
+.autocomplete ul {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  border-left: 1px solid #888;
+  border-right: 1px solid #888;
+  border-bottom: 1px solid #888;
+  z-index: 1;
+}
+.autocomplete li {
+  text-align: left;
+  list-style: none;
+  width: 100%;
+  padding: 0.4em;
+  background-color: #00FF0A;
+  color: black;
+}
+.autocomplete li.active {
+  width: 100%;
+  background-color: #4bf;
+}
+.autocomplete .highlight {
+  background-color: #E2E2E2;
+}
+.autocomplete li.active .highlight {
+  background: #666;
+  color: #fff;
+}
+.deco-container button {
+  height: 75px;
+}
+.deco-container button + button {
+  border-left: 2px solid black !important;
 }

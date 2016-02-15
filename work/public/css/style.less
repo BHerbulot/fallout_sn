@@ -194,6 +194,13 @@ a{
 	height: 62vh;
 }
 
+//overflow container
+.of-container{
+	overflow: auto;
+    overflow-x: hidden;
+	height: 75vh;
+}
+
 .no-post{
 	text-align: center;
     font-size: 60px;
@@ -316,6 +323,19 @@ a{
 	}
 }
 
+.btn-submit{
+	text-align: center;
+	font-weight: bold;
+	margin-top: 15px;
+	background-color: @primary;
+    color: black;
+    border: none;
+    border-radius: 0;
+	&:active{
+		background-color: darken(@primary, 30%);
+	}
+}
+
 .btn-sn{
 	background-color: @primary;
 	color: black;
@@ -350,7 +370,8 @@ a{
     padding: 15px 0 ;
 }
 
-form input.form-control, form button{
+
+form input.form-control, form textarea.form-control,  form button{
 	background-color: @primary;
     color: black;
     border: none;
@@ -512,3 +533,56 @@ form input.form-control, form button{
    // margin: 1%;
        margin-bottom: 2px;
 }
+
+/* AUTOCOMPLETE */
+
+.autocomplete{
+  width: 100%;
+  position: relative;
+
+  input{
+	  font-size: 1.2em;
+	  width: 100%;
+	  padding:0.4em;
+	  background-color: @primary;
+	  color: black;
+	  border: none;
+    border-radius: 0;
+	}
+
+	ul{
+	  position: absolute;
+	  left: 0;
+	  width: 100%;
+	  border-left: 1px solid #888;
+	  border-right: 1px solid #888;
+	  border-bottom: 1px solid #888;
+	  z-index: 1;
+	}
+
+	li{
+	  text-align: left;
+	  list-style:none;
+	  width: 100%;
+	  padding:0.4em;
+	  background-color: @primary;
+	  color: black;
+	}
+
+	li.active{
+	  width: 100%;
+	  background-color: #4bf;
+	}
+
+	.highlight {
+	  background-color: #E2E2E2;
+	}
+
+	li.active .highlight {
+	  background: #666;
+	  color: #fff;
+	}
+
+}
+
+

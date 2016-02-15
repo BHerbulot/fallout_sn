@@ -4,6 +4,74 @@
 		"selected_items":
 		[
 			[
+				"se",
+				"self"
+			],
+			[
+				"mem",
+				"member"
+			],
+			[
+				"i",
+				"inline-block"
+			],
+			[
+				"over",
+				"overflow-x"
+			],
+			[
+				"la",
+				"label	Tag"
+			],
+			[
+				"in",
+				"info"
+			],
+			[
+				"coll",
+				"collection"
+			],
+			[
+				"get",
+				"get	Get Elements"
+			],
+			[
+				"lo",
+				"log	log"
+			],
+			[
+				"invi",
+				"invitation"
+			],
+			[
+				"inv",
+				"invitation"
+			],
+			[
+				"frie",
+				"friends"
+			],
+			[
+				"user",
+				"user_sender"
+			],
+			[
+				"fi",
+				"find"
+			],
+			[
+				"use",
+				"user_param"
+			],
+			[
+				"l",
+				"log	log"
+			],
+			[
+				"Da",
+				"data"
+			],
+			[
 				"wa",
 				"wall_type"
 			],
@@ -14,10 +82,6 @@
 			[
 				"if",
 				"if	if"
-			],
-			[
-				"lo",
-				"location"
 			],
 			[
 				"comme",
@@ -84,14 +148,6 @@
 				"function"
 			],
 			[
-				"get",
-				"get_post"
-			],
-			[
-				"coll",
-				"coll"
-			],
-			[
 				"co",
 				"coll"
 			],
@@ -104,10 +160,6 @@
 				"a"
 			],
 			[
-				"in",
-				"input"
-			],
-			[
 				"for",
 				"form	Tag"
 			],
@@ -118,14 +170,6 @@
 			[
 				"pers",
 				"personnel-wall"
-			],
-			[
-				"invi",
-				"invitations"
-			],
-			[
-				"inv",
-				"invites"
 			],
 			[
 				"fie",
@@ -142,10 +186,6 @@
 			[
 				"doc",
 				"doc"
-			],
-			[
-				"mem",
-				"member_coll"
 			],
 			[
 				"ini",
@@ -170,14 +210,6 @@
 			[
 				"j",
 				"j"
-			],
-			[
-				"i",
-				"invitation"
-			],
-			[
-				"se",
-				"self"
 			],
 			[
 				"invit",
@@ -364,10 +396,6 @@
 				"distanceTravelled"
 			],
 			[
-				"fi",
-				"gameFinish"
-			],
-			[
 				"game",
 				"gameFinish"
 			],
@@ -383,7 +411,7 @@
 			"file": "work/views/home.html",
 			"settings":
 			{
-				"buffer_size": 3859,
+				"buffer_size": 3926,
 				"line_ending": "Windows"
 			}
 		},
@@ -391,15 +419,7 @@
 			"file": "work/public/template/inviter.html",
 			"settings":
 			{
-				"buffer_size": 1180,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "work/index.js",
-			"settings":
-			{
-				"buffer_size": 1696,
+				"buffer_size": 1810,
 				"line_ending": "Windows"
 			}
 		},
@@ -407,7 +427,7 @@
 			"file": "work/routes/base.js",
 			"settings":
 			{
-				"buffer_size": 6963,
+				"buffer_size": 10640,
 				"line_ending": "Windows"
 			}
 		},
@@ -415,7 +435,7 @@
 			"file": "work/public/template/friend_list.html",
 			"settings":
 			{
-				"buffer_size": 1416,
+				"buffer_size": 1619,
 				"line_ending": "Windows"
 			}
 		},
@@ -423,23 +443,15 @@
 			"file": "work/public/js/script.js",
 			"settings":
 			{
-				"buffer_size": 19451,
+				"buffer_size": 22402,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "work/public/template/mur.html",
+			"file": "work/public/template/info.html",
 			"settings":
 			{
-				"buffer_size": 1856,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "work/tools.js",
-			"settings":
-			{
-				"buffer_size": 880,
+				"buffer_size": 6557,
 				"line_ending": "Windows"
 			}
 		},
@@ -447,7 +459,7 @@
 			"file": "work/public/css/style.less",
 			"settings":
 			{
-				"buffer_size": 8359,
+				"buffer_size": 9492,
 				"line_ending": "Windows"
 			}
 		}
@@ -535,21 +547,26 @@
 	"expanded_folders":
 	[
 		"/C/Users/Paladin/falloutSN/fallout_social_network",
+		"/C/Users/Paladin/falloutSN/fallout_social_network/node_modules",
 		"/C/Users/Paladin/falloutSN/fallout_social_network/work",
 		"/C/Users/Paladin/falloutSN/fallout_social_network/work/public",
-		"/C/Users/Paladin/falloutSN/fallout_social_network/work/public/template"
+		"/C/Users/Paladin/falloutSN/fallout_social_network/work/public/js",
+		"/C/Users/Paladin/falloutSN/fallout_social_network/work/public/template",
+		"/C/Users/Paladin/falloutSN/fallout_social_network/work/routes"
 	],
 	"file_history":
 	[
+		"/C/Users/Paladin/falloutSN/fallout_social_network/work/public/css/autocomplete.css",
+		"/C/Users/Paladin/falloutSN/fallout_social_network/bower.json",
+		"/C/Users/Paladin/falloutSN/fallout_social_network/work/tools.js",
+		"/C/Users/Paladin/falloutSN/fallout_social_network/work/public/template/mur.html",
+		"/C/Users/Paladin/falloutSN/fallout_social_network/work/index.js",
 		"/C/Users/Paladin/falloutSN/fallout_social_network/work/public/template/post_back.html",
 		"/C/Users/Paladin/falloutSN/fallout_social_network/work/routes/account.js",
-		"/C/Users/Paladin/falloutSN/fallout_social_network/work/index.js",
 		"/C/Users/Paladin/falloutSN/fallout_social_network/work/public/js/identification.js",
 		"/C/Users/Paladin/falloutSN/fallout_social_network/test.dot",
 		"/C/Users/Paladin/falloutSN/fallout_social_network/work/.gitignore",
 		"/C/Users/Paladin/falloutSN/fallout_social_network/work/views/login.html",
-		"/C/Users/Paladin/falloutSN/fallout_social_network/work/tools.js",
-		"/C/Users/Paladin/falloutSN/fallout_social_network/bower.json",
 		"/C/Users/Paladin/falloutSN/fallout_social_network/work/public/template/connexion.html",
 		"/C/Users/Paladin/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/C/Users/Paladin/falloutSN/fallout_social_network/work/public/css/style.less",
@@ -632,6 +649,46 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"10",
+			"7",
+			".autocomplete",
+			"body",
+			":",
+			"update",
+			"mail",
+			"coord",
+			"Coord",
+			"coord",
+			"first_name",
+			"email",
+			"pseudo",
+			"Pseudo",
+			"pseudo",
+			"<span ng-show=",
+			"{\n",
+			"&",
+			"form",
+			"coord",
+			"Coord",
+			"coord",
+			"post",
+			"birthday",
+			"age",
+			"first_name",
+			"10",
+			"focus_pseudo",
+			"name",
+			"value",
+			"pseudo",
+			"form_inscription",
+			"findO",
+			"find",
+			"new_user",
+			"insc_ctrl",
+			"body.user_sender",
+			"alt=\"Cinque Terre\"",
+			"\\",
+			"console",
 			"/",
 			"when",
 			"/",
@@ -719,47 +776,7 @@
 			"7",
 			"5",
 			"col",
-			"id",
-			"friend",
-			"8",
-			"friend",
-			"form_forgot_pwd",
-			"email",
-			"form-group",
-			"_pwd",
-			"mail",
-			".animtest",
-			"animtest",
-			"hide",
-			"11",
-			"10",
-			"12",
-			"2",
-			"10",
-			"6",
-			"userForm",
-			"pwd-forgot",
-			"login",
-			"Password",
-			"4",
-			"#00FF0A",
-			"#00ff0a",
-			" rgba(255,38,0,1) 0%, rgba(87,12,5,1) 100%)",
-			"6",
-			"8",
-			"state",
-			"online'",
-			"script",
-			"60px",
-			"50",
-			"10",
-			"2",
-			"1",
-			"9",
-			"3",
-			"8",
-			"	display: inline-block;",
-			"font-weight: bold;"
+			"id"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -779,7 +796,7 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -788,226 +805,20 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3859,
+						"buffer_size": 3926,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1776,
-								1776
+								339,
+								339
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 266.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "work/public/template/inviter.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1180,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "work/index.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1696,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								157,
-								124
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "work/routes/base.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6963,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6519,
-								6528
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 3903.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "work/public/template/friend_list.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1416,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "work/public/js/script.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 19451,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7962,
-								7962
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true,
-							"word_wrap": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 4161.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "work/public/template/mur.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1856,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								898,
-								898
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 114.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "work/tools.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 880,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								849,
-								849
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -1018,20 +829,168 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "work/public/css/style.less",
+					"buffer": 1,
+					"file": "work/public/template/inviter.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8359,
+						"buffer_size": 1810,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2591,
-								2591
+								1705,
+								1716
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "work/routes/base.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10640,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10615,
+								10615
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 6557.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "work/public/template/friend_list.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1619,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								116,
+								63
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "work/public/js/script.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 22402,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10433,
+								10446
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5925.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "work/public/template/info.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6557,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6433,
+								6526
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1319.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "work/public/css/style.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9492,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9263,
+								9263
 							]
 						],
 						"settings":
@@ -1039,10 +998,10 @@
 							"syntax": "Packages/LESS/LESS.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 3223.0,
+						"translation.y": 10090.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]

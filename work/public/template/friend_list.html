@@ -24,10 +24,10 @@
 						</div> -->
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-switch on= "all.state">
 							<div ng-switch-when = "invites"> 
-								<button class="btn-sn" >Attente de réponse</button>
+								<button class="btn-sn" ng-click="ctrl_friends.accept_invitation($event, all.user)">Accepter l'invitation</button>
 							</div>
 							<div ng-switch-when = "invitations"> 
-								<button class="btn-sn">Accepter l'invitatio</button>
+								<button class="btn-sn">Attente de réponse</button>
 							</div><div ng-switch-default> 
 								<!-- <button class="btn-sn" ng-click="ctrl_friends.invite_member(member.user)" >inviter</button> -->
 							</div>

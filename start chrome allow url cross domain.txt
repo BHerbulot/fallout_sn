@@ -23,8 +23,10 @@ db.user.insert({
 });
 
 
-cd /cygdrive/c/Users/Paladin/falloutSN/fallout_social_network/work
+cd /cygdrive/c/Users/Paladin/falloutSN/fallout_social_network/work && node index
 
 clear = printf "\033c"
 
 dot.exe -Tpdf test.dot -o file.pdf
+
+
